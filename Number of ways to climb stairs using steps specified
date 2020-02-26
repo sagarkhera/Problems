@@ -1,0 +1,14 @@
+def dp_ways(n,k):
+    if n==0:
+        return 1
+    nums = [None] * (n+1)
+    nums[0] = 1
+    for i in range(1,len(nums)):
+        total=0
+        for j in k:
+            if i-j>=0:
+                total += nums[i-j]
+        nums[i] = total
+    return nums[i]
+
+dp_ways(1,[1,2])
